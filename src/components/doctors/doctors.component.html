@@ -1,0 +1,15 @@
+<p>
+  Doctor Details
+</p>
+<div>
+  <ul>
+    <li *ngFor="let item of doctors">
+      <h2>Name: {{item.profile.first_name}} {{item.profile.middle_name}} {{item.profile.last_name}} </h2>
+      <p>Gender: {{item.profile.gender}}</p>
+      <p>Bio: {{item.profile.bio}}</p>
+      <hr>
+      <h4>Speciality:</h4>
+      <p *ngFor="let spe of item.specialties">{{spe.uid}}</p>
+    </li>
+  </ul>
+</div>
