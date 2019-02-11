@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>
+    $(document).ready(function(){
+    $("#content").attr("src","https://api.betterdoctor.com/2016-03-01/doctors?location=37.773%2C-122.413%2C100&user_location=37.773%2C-122.413&skip=0&limit=10&user_key=cec273b20e42d8d889b41559be8d8175");
+     $("#content1").attr("src","curl -X GET \ 'https://api.vericred.com/providers?search_term=Foo&zip_code=11215' \
+  -H 'vericred-api-key: cc11f44ae168b4f4659108742f90534f'");
+      $("#content2").attr("src","https://maps.googleapis.com/maps/api/js?key=AIzaSyDAmA_VZYhPC8flnn1h5SFyCPI8_EObPw4&callback=initMap");
+}
+)
+</script>
+</head>
+<body style="background-color: skyblue">
+
+<div class="container">
+
+    <h1>Hospital Assistance</h1>
+
+  <ul class="nav nav-tabs" style="background-color: lightpink" style="color: pink">
+    <li><a data-toggle="tab" href=""><i class="fa fa-fw fa-home"></i>Home</a></li>
+    <li><a data-toggle="tab" href="doctors"><i class="fa fa-fw fa-user"></i>Doctors-Nearby</a></li>
+    <li><a data-toggle="tab" href="insurance"><i class="fa fa-fw fa-search"></i>Insurance</a></li>
+    <li><a data-toggle="tab" href="directions"><i class="fa fa-fw fa-map-marker"></i> Directions</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+    </div>
+    <div id="Doctors-Nearby" class="tab-pane fade">
+      
+       <iframe id="content" src="about:blank"></iframe>
+      
+    </div>
+    <div id="Insurance" class="tab-pane fade">
+       <iframe id="content1" src="about:blank"></iframe>
+    </div>
+    <div id="Directions" class="tab-pane fade">
+      <iframe id="content2" src="about:blank"></iframe>
+      <style>
+          #map {
+            height: 400px;
+            width: 100%;
+          }
+      </style>
+      <div id="map"></div>
+      <script>
+          function initMap(){
+            var options = {
+                zoom: 8,
+                center:{lat:42.3601,lng:-71.0589}
+            }
+
+
+            var map = new google.maps.Map(document.getElementById('map'), options);
+          }
+      </script>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

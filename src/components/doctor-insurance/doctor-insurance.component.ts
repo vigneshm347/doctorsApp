@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DoctorInsuranceService} from '../../app/doctor-insurance.service';
+import {InsuranceCardComponent} from '../insurance-card/insurance-card.component';
 
 @Component({
   selector: 'app-doctor-insurance',
@@ -23,6 +24,7 @@ export class DoctorInsuranceComponent implements OnInit {
       (res)=>{
         this.response = res.json();
           this.insurances = this.response.providers;
+          console.log(this.insurances);
           this.status = res.status
         
       },

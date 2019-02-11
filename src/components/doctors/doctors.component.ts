@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DoctorService} from '../../app/doctor.service';
+import {HomeComponent} from '../home/home.component';
 import { getTypeNameForDebugging } from '@angular/core/src/facade/lang';
 
 

@@ -1,6 +1,9 @@
 
 
-
+  <app-home></app-home>
+  
+  <div class="container">
+  <h2>Doctors</h2>
   <form>
     <div class="form-group">
       <label for="name">Latitude</label>
@@ -14,10 +17,10 @@
 
     <button type="submit" class="btn btn-success" (click)="getProfile()">Submit</button>
 </form>
-
+<h3>Searching in latitude {{latitude}} and longitude {{longitude}}</h3>
 <div *ngIf="isAvailable">
   <ul>
-    <li *ngFor="let item of doctors">
+    <li *ngFor="let item of doctors" class="card">
       <h2>Name: {{item.profile.first_name}} {{item.profile.middle_name}} {{item.profile.last_name}} </h2>
       <p>Gender: {{item.profile.gender}}</p>
       <p>Bio: {{item.profile.bio}}</p>
@@ -30,4 +33,5 @@
 
 <div *ngIf="!!isAvailable">
   No doctors
+</div>
 </div>

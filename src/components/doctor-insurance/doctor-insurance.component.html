@@ -1,4 +1,7 @@
-
+  
+  <app-home></app-home>
+  <div class="container">
+  <h2>Insurance</h2>
   <form>
     <div class="form-group">
       <label for="name">Zip Code</label>
@@ -7,15 +10,24 @@
     <button type="submit" class="btn btn-success" (click)="getInsuranceDetails()">Submit</button>
 </form> 
 
+<h3>Searching in.. {{zip}}</h3>
+
 <div *ngIf = "status==200">
-  <ul>
-    <li *ngFor="let i of insurances">
-      {{i.city}}
-    </li>
-  </ul>
+  <div *ngFor="let i of insurances"> 
+      <app-insurance-card
+      [name]="i.first_name"  
+      [street]="i.street_line_1"
+      [organization]="i.organization_name"
+      [city]="i.city"
+      [phone]="i.phone">
+
+      </app-insurance-card>
+  </div>
+  
 </div>
 
 <div *ngIf = "status==404">
   No insurances
+</div>
 </div>
 

@@ -11,6 +11,10 @@ import { GoogleApiComponent } from '../components/google-api/google-api.componen
 import { GApiService } from './g-api.service';
 import { DoctorInsuranceComponent } from '../components/doctor-insurance/doctor-insurance.component';
 import { DoctorInsuranceService } from './doctor-insurance.service';
+import { HomeComponent } from '../components/home/home.component';
+import { PageNotFoundComponent } from '../components/page-not-found/page-not-found.component';
+import { InsuranceCardComponent } from '../components/insurance-card/insurance-card.component';
+//import {MatCardModule} from '@angular/material/card';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +24,14 @@ const appRoutes: Routes = [
   {
     path: 'insurance',
     component: DoctorInsuranceComponent
+  },
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ]
 @NgModule({
@@ -27,7 +39,10 @@ const appRoutes: Routes = [
     AppComponent,
     DoctorsComponent,
     GoogleApiComponent,
-    DoctorInsuranceComponent
+    DoctorInsuranceComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    InsuranceCardComponent
   ],
   imports: [
     RouterModule.forRoot(
