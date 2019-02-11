@@ -26,6 +26,10 @@ const appRoutes: Routes = [
     component: DoctorInsuranceComponent
   },
   {
+    path: 'map',
+    component: GoogleApiComponent
+  },
+  {
     path: '',
     component: HomeComponent
   },
