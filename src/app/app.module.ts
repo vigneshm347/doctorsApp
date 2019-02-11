@@ -8,19 +8,22 @@ import { DoctorsComponent } from '../components/doctors/doctors.component';
 import { DoctorService } from './doctor.service';
 import { GoogleApiComponent } from '../components/google-api/google-api.component';
 import { GApiService } from './g-api.service';
+import { DoctorInsuranceComponent } from '../components/doctor-insurance/doctor-insurance.component';
+import { DoctorInsuranceService } from './doctor-insurance.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorsComponent,
-    GoogleApiComponent
+    GoogleApiComponent,
+    DoctorInsuranceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers:  [ DoctorService, GApiService],
+  providers:  [ DoctorService, GApiService, DoctorInsuranceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
