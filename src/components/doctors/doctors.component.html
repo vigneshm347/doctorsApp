@@ -1,0 +1,35 @@
+<p>
+  Doctor Details
+</p>
+
+
+  <form>
+    <div class="form-group">
+      <label for="name">Latitude</label>
+      <input type="text" class="form-control" id="lat" name = "lat" [(ngModel)]="latitude" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Longitude</label>
+      <input type="text" class="form-control" name="long" [(ngModel)]="longitude" id="long">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="getProfile()">Submit</button>
+</form>
+
+<div *ngIf="isAvailable">
+  <ul>
+    <li *ngFor="let item of doctors">
+      <h2>Name: {{item.profile.first_name}} {{item.profile.middle_name}} {{item.profile.last_name}} </h2>
+      <p>Gender: {{item.profile.gender}}</p>
+      <p>Bio: {{item.profile.bio}}</p>
+      <hr>
+      <h4>Speciality:</h4>
+      <p *ngFor="let spe of item.specialties">{{spe.uid}}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!!isAvailable">
+  No doctors
+</div>

@@ -1,0 +1,21 @@
+
+  <form>
+    <div class="form-group">
+      <label for="name">Zip Code</label>
+      <input type="text" class="form-control" id="zip" name = "zip" [(ngModel)]="zip" required>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="getInsuranceDetails()">Submit</button>
+</form> 
+
+<div *ngIf = "status==200">
+  <ul>
+    <li *ngFor="let i of insurances">
+      {{i.city}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf = "status==404">
+  No insurances
+</div>
+
