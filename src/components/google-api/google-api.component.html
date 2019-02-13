@@ -16,8 +16,8 @@
 </form>
 
 <div class="card" *ngIf="isValid">
-  <div><strong>Origin</strong> {{orgin}}, {{getPlace(direction.origin_addresses[0]) | uppercase}}</div>
-  <div><strong>Destination:</strong> {{destination}}, {{getPlace(direction.destination_addresses[0]) | uppercase}}</div>
+  <div><strong>Origin</strong> {{orgin | uppercase}}, {{getPlace(direction.origin_addresses[0]) | uppercase}}</div>
+  <div><strong>Destination:</strong> {{destination | uppercase}}, {{getPlace(direction.destination_addresses[0]) | uppercase}}</div>
   <div><strong>Distance:</strong> {{direction.rows[0].elements[0].distance.text | uppercase}} </div>
   <div><strong>Duration:</strong> {{direction.rows[0].elements[0].duration.text | uppercase}}</div>
   <div><strong>Total Distance:</strong> {{direction.rows[0].elements[0].duration_in_traffic.text | uppercase}}</div>
