@@ -1,3 +1,26 @@
-<p>
-  google-api works!
-</p>
+<app-home></app-home>
+<div class="container">
+  <h2>Directions</h2>
+  <form>
+    <div class="form-group">
+      <label for="name">Origin</label>
+      <input type="text" class="form-control" id="org" name = "org" [(ngModel)]="orgin" required>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Destination</label>
+      <input type="text" class="form-control" name="dest" [(ngModel)]="destination" id="dest">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="getDistance()">Submit</button>
+</form>
+
+<div class="card" *ngIf="isValid">
+  <div><strong>Origin</strong> {{orgin}}, {{getPlace(direction.origin_addresses[0]) | uppercase}}</div>
+  <div><strong>Destination:</strong> {{destination}}, {{getPlace(direction.destination_addresses[0]) | uppercase}}</div>
+  <div><strong>Distance:</strong> {{direction.rows[0].elements[0].distance.text | uppercase}} </div>
+  <div><strong>Duration:</strong> {{direction.rows[0].elements[0].duration.text | uppercase}}</div>
+  <div><strong>Total Distance:</strong> {{direction.rows[0].elements[0].duration_in_traffic.text | uppercase}}</div>
+</div>
+
+</div>
